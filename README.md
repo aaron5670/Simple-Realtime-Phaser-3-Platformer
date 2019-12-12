@@ -5,7 +5,7 @@ Simple realtime platformer build with Phaser 3, Socket.io, ExpressJS & Webpack 4
 
 1. Git clone this repository
 2. Create in the server folder a file called config.js
-3. add the following code:
+3. Add the following code to the config.js file:
     ```javascript
     //CLOUD.MONGODB.COM DEVELOPMENT SETTINGS
     // TIP: Create free online MongoDB Cluster at: https://cloud.mongodb.com/
