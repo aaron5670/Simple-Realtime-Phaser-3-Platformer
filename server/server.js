@@ -4,14 +4,11 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
-// const WebSocket = require('ws');
-
 const mongoose = require('mongoose');
 const db = mongoose.connection;
 const srvConfig = require('./config');
 
 const cors = require('cors');
-
 const server = express();
 
 //Middleware
@@ -41,23 +38,6 @@ const io = require('socket.io').listen(httpServer);
 io.use(sharedsession(session, {
     autoSave: true
 }));
-
-/*================================================
-| TEST ROUTE
-*/
-server.get('/test', (req, res) => {
-    req.session.username = 'Aaron';
-    res.json({
-        session: req.session
-    })
-});
-
-/*================================================
-| Return all current online players
-*/
-server.get('/players', (req, res) => {
-    res.json(players)
-});
 
 const players = {};
 io.on('connection', function (socket) {
