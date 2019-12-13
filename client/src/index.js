@@ -10,20 +10,15 @@ import onlinePlayerImg from "./assets/images/char03_0000.png"
 import io from "socket.io-client";
 import {PORT, URL} from "./settings";
 
-
 const config = {
     type: Phaser.AUTO,
     parent: 'game',
-    width: 800,
+    width: 890,
     height: 640,
-    // scale: {
-    //     mode: Phaser.Scale.RESIZE,
-    //     autoCenter: Phaser.Scale.CENTER_BOTH
-    // },
     scene: {
         preload,
         create,
-        update,
+        update
     },
     physics: {
         default: 'arcade',
@@ -32,7 +27,7 @@ const config = {
         },
     }
 };
-new Phaser.Game(config);
+const game = new Phaser.Game(config);
 
 /*================================================
 | Array with current online players
