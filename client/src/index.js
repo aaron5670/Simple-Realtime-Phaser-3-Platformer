@@ -15,7 +15,7 @@ const config = {
     type: Phaser.AUTO,
     parent: 'game',
     width: 800,
-    heigth: 640,
+    height: 640,
     // scale: {
     //     mode: Phaser.Scale.RESIZE,
     //     autoCenter: Phaser.Scale.CENTER_BOTH
@@ -94,21 +94,13 @@ function create() {
 
     this.socket.on("PLAYER_MOVED", playerInfo => {
         console.log('PLAYER_MOVED');
-        // console.log(playerInfo)
 
         onlinePlayers[playerInfo.playerId].setPosition(playerInfo.x, playerInfo.y);
-
-        // Object.keys(onlinePlayers).forEach(playerId => {
-        //     console.log('ME: ' + this.socket.id)
-        //     console.log(playerId)
-        //     // if (onlinePlayers[playerId] === playerInfo.playerId) {
-        //     //     console.log('MOVED')
-        //     // }
-        // })
     });
 
     this.socket.on('PLAYER_DISCONNECT', (player) => {
         console.log('PLAYER_DISCONNECT');
+
         onlinePlayers[player].destroy()
     });
 
