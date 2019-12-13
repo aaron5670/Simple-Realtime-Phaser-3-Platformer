@@ -17,8 +17,8 @@ Simple realtime platformer build with Phaser 3, Socket.io, ExpressJS & Webpack 4
     
     module.exports = {USERNAME, PASSWORD, HOST, PORT, DB};
     ```
-4. Run the command ``npm install`` in the root folder.
+4. Run the command ``npm install`` in the client folder.
 5. Run the command ``npm install`` in the server folder.
 6. Run server.js with ``node server.js`` in the server folder.
-7. Run the Webpack server in root folder with the command: ``npm start``.
+7. Run the Webpack server in client folder with the command: ``npm start``.
 8. Go to http://localhost:8080/
